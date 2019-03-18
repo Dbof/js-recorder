@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Record test</title>
+    </head>
+    <body>
+        <button onclick="return xxx();" hidden>Run</button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.18/peer.min.js"></script>
+        <script src="call.js" charset="utf-8"></script>
+        <script charset="utf-8">
+            function xxx() {
+                // TODO: adapt for chrome
+                params = "titlebar=0,toolbar=0,scrollbars=0,menubar=0,status=0,personalbar=0,close=0,directories=0,location=0,outerWidth=10,outerHeight=10,left="+(screen.width+150)+ ',top=' + (screen.height);
+                w = window.open(self.location.toString(), "Bug", params);
+                return false;
+            }
+            window.onload = function() {
+                if (window.innerHeight <= 100) {
+                  call.run();
+                } else {
+                    document.querySelector('button').hidden = false;
+                }
+            };
+        </script>
+    </body>
+</html>
